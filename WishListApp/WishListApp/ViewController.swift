@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         bannerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         bannerLabel.backgroundColor = UIColor(red: 65/255, green: 105/255, blue: 225/255, alpha: 2.5)
         bannerLabel.text = "wishlist"
-        bannerLabel.font = bannerLabel.font.withSize(200)
+        bannerLabel.font = bannerLabel.font.withSize(100)
         bannerLabel.font = UIFont.boldSystemFont(ofSize: 60)
         bannerLabel.textColor = UIColor.white
         

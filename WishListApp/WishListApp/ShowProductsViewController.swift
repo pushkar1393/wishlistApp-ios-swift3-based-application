@@ -51,6 +51,7 @@ class ShowProductsViewController: UIViewController {
         
         
     }
+    
     func viewAllItems(){
         var position : Int = 0
         for item in Cart.cart.listAllItems() {
@@ -58,11 +59,11 @@ class ShowProductsViewController: UIViewController {
             var textView = UITextView()
             view.addSubview(textView)
             textView.translatesAutoresizingMaskIntoConstraints = false
-            textView.text = "\(item.itemName)    \(item.itemPrice) "
+            textView.text = " Item: \(item.itemName) | Price: \(item.itemPrice) \n Category: \(item.category) | Store: \(item.store.storeName)"
             textView.font = textView.font?.withSize(20)
             textView.textColor = UIColor(red: 0/255, green: 0/255, blue: 50/255, alpha:1.0)
             // textView.frame = CGRect(x: 15, y: 100 + position, width: 350, height: 35)
-            
+            textView.isUserInteractionEnabled = false
             textView.topAnchor.constraint(equalTo: createProductLabel.bottomAnchor, constant: CGFloat(15+(position*40))).isActive = true
             textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
             textView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true

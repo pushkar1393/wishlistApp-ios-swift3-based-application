@@ -101,7 +101,7 @@ class CreateProductViewController: UIViewController {
         storeAddressTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         view.addSubview(storeContactTextField)
-        storeContactTextField.placeholder = "Enter Store Address"
+        storeContactTextField.placeholder = "Enter Store Contact Info"
         storeContactTextField.translatesAutoresizingMaskIntoConstraints = false
         storeContactTextField.borderStyle = .roundedRect
         storeContactTextField.topAnchor.constraint(equalTo: storeAddressTextField .topAnchor, constant: 45).isActive = true
@@ -174,7 +174,7 @@ class CreateProductViewController: UIViewController {
             var store = Store(storeNameTextField.text!,storeAddressTextField.text!, Int64(storeContactTextField.text!)!)
             
             var item = Item(itemNameTextField.text!, itemDescriptionTextField.text!, Int(itemPriceTextField.text!)!, store, categoryTextField.text!)
-            
+            Cart.cart.addCategory(categoryTextField.text!, item)
             Cart.cart.addItem(item)
             createAlert("Congratulations","Item added successfully !")
             resetBtnpressed()
@@ -196,7 +196,7 @@ class CreateProductViewController: UIViewController {
     }
     
     func checkIsValid() -> Int {
-        if itemNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" && itemPriceTextField.text == "" && itemDescriptionTextField.text == "" && categoryTextField.text == "" && storeNameTextField.text == "" && storeAddressTextField.text == "" && storeContactTextField.text == "" {
+        if itemNameTextField.text == "" || itemPriceTextField.text == "" || itemDescriptionTextField.text == "" || categoryTextField.text == "" || storeNameTextField.text == "" || storeAddressTextField.text == "" || storeContactTextField.text == "" {
             return 2
         } else if Int(itemPriceTextField.text!) == nil{
             return 3

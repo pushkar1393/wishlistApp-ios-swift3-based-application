@@ -90,8 +90,8 @@ class SearchProductsViewController: UIViewController {
         if searchTextField.text == nil {
             createAlert("Empty field", "Enter item name to search.")
         } else {
-            viewAllItems(Cart.cart.searchItem(searchTextField.text!)!)
-            
+            viewAllItems(Cart.cart.searchItem((searchTextField.text)!)!)
+            searchTextField.text = ""
         }
     }
     
@@ -118,7 +118,7 @@ class SearchProductsViewController: UIViewController {
                 textView.font = textView.font?.withSize(20)
                 textView.textColor = UIColor(red: 0/255, green: 0/255, blue: 50/255, alpha:1.0)
                 // textView.frame = CGRect(x: 15, y: 100 + position, width: 350, height: 35)
-                
+                textView.isUserInteractionEnabled = false
                 textView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: CGFloat(15+(position*40))).isActive = true
                 textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
                 textView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
@@ -133,6 +133,7 @@ class SearchProductsViewController: UIViewController {
             textView.translatesAutoresizingMaskIntoConstraints = false
             textView.text = "No Item found "
             textView.font = textView.font?.withSize(20)
+            textView.isUserInteractionEnabled = false
             textView.textColor = UIColor(red: 0/255, green: 0/255, blue: 50/255, alpha:1.0)
             textView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: CGFloat(15)).isActive = true
             textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true

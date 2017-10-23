@@ -93,8 +93,10 @@ class DeleteProductViewController : UIViewController {
             createAlert("Empty Field", "Enter Item name to delete")
         } else if Cart.cart.removeItem(deleteItemTextField.text!)! == false{
             createAlert("Information", "No Item found to delete")
+            deleteItemTextField.text = ""
         } else {
             createAlert("Success", "Item deleted successfully!")
+            deleteItemTextField.text = ""
         }
         
     }
