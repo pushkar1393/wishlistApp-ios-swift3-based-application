@@ -58,8 +58,8 @@ class CreateProductViewController: UIViewController {
         itemNameTextField.borderStyle = .roundedRect
         itemNameTextField.topAnchor.constraint(equalTo: createProductLabel.topAnchor, constant: 60).isActive = true
         itemNameTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        itemNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        itemNameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        itemNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        itemNameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         
         view.addSubview(itemDescriptionTextField)
@@ -68,8 +68,8 @@ class CreateProductViewController: UIViewController {
         itemDescriptionTextField.borderStyle = .roundedRect
         itemDescriptionTextField.topAnchor.constraint(equalTo: itemNameTextField.topAnchor, constant: 45).isActive = true
         itemDescriptionTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        itemDescriptionTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        itemDescriptionTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        itemDescriptionTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        itemDescriptionTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         
         view.addSubview(itemPriceTextField)
@@ -78,8 +78,8 @@ class CreateProductViewController: UIViewController {
         itemPriceTextField.borderStyle = .roundedRect
         itemPriceTextField.topAnchor.constraint(equalTo: itemDescriptionTextField.topAnchor, constant: 45).isActive = true
         itemPriceTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        itemPriceTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        itemPriceTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        itemPriceTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        itemPriceTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         
         view.addSubview(storeNameTextField)
@@ -88,8 +88,8 @@ class CreateProductViewController: UIViewController {
         storeNameTextField.borderStyle = .roundedRect
         storeNameTextField.topAnchor.constraint(equalTo: itemPriceTextField.topAnchor, constant: 45).isActive = true
         storeNameTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        storeNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        storeNameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        storeNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        storeNameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         view.addSubview(storeAddressTextField)
         storeAddressTextField.placeholder = "Enter Store Address"
@@ -97,8 +97,8 @@ class CreateProductViewController: UIViewController {
         storeAddressTextField.borderStyle = .roundedRect
         storeAddressTextField.topAnchor.constraint(equalTo: storeNameTextField.topAnchor, constant: 45).isActive = true
         storeAddressTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        storeAddressTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        storeAddressTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        storeAddressTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        storeAddressTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         view.addSubview(storeContactTextField)
         storeContactTextField.placeholder = "Enter Store Address"
@@ -106,8 +106,8 @@ class CreateProductViewController: UIViewController {
         storeContactTextField.borderStyle = .roundedRect
         storeContactTextField.topAnchor.constraint(equalTo: storeAddressTextField .topAnchor, constant: 45).isActive = true
         storeContactTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        storeContactTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        storeContactTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        storeContactTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        storeContactTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         
         view.addSubview(categoryTextField)
@@ -116,8 +116,8 @@ class CreateProductViewController: UIViewController {
         categoryTextField.borderStyle = .roundedRect
         categoryTextField.topAnchor.constraint(equalTo: storeContactTextField.topAnchor, constant: 45).isActive = true
         categoryTextField.heightAnchor.constraint(equalToConstant:35).isActive = true
-        categoryTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        categoryTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        categoryTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        categoryTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         //create button to add item
         
@@ -129,9 +129,9 @@ class CreateProductViewController: UIViewController {
         createButton.layer.masksToBounds = true
         createButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         createButton.leftAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
-        createButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        createButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         createButton.topAnchor.constraint(equalTo: categoryTextField.bottomAnchor, constant: 50).isActive = true
-        createButton.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 0.4)
+        createButton.backgroundColor = UIColor(red: 65/255, green: 105/255, blue: 225/255, alpha: 0.8)
         createButton.setTitleColor(UIColor.white, for: .normal)
         createButton.addTarget(self, action: #selector(createItemBtnpressed), for: .touchUpInside)
         
@@ -144,10 +144,10 @@ class CreateProductViewController: UIViewController {
         backButton.layer.cornerRadius = 5
         backButton.layer.masksToBounds = true
         backButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         backButton.topAnchor.constraint(equalTo: categoryTextField.bottomAnchor, constant: 50).isActive = true
         backButton.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
-        backButton.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 0.4)
+        backButton.backgroundColor = UIColor(red: 65/255, green: 105/255, blue: 225/255, alpha: 0.8)
         backButton.setTitleColor(UIColor.white, for: .normal)
         backButton.addTarget(self, action: #selector(backBtnpressed), for: .touchUpInside)
         
@@ -160,10 +160,10 @@ class CreateProductViewController: UIViewController {
         resetButton.layer.cornerRadius = 5
         resetButton.layer.masksToBounds = true
         resetButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        resetButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        resetButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         resetButton.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 20).isActive = true
-        resetButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        resetButton.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 0.4)
+        resetButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        resetButton.backgroundColor = UIColor(red: 65/255, green: 105/255, blue: 225/255, alpha: 0.8)
         resetButton.setTitleColor(UIColor.white, for: .normal)
         resetButton.addTarget(self, action: #selector(resetBtnpressed), for: .touchUpInside)
         
@@ -196,7 +196,7 @@ class CreateProductViewController: UIViewController {
     }
     
     func checkIsValid() -> Int {
-        if itemNameTextField.text == "" && itemPriceTextField.text == "" && itemDescriptionTextField.text == "" && categoryTextField.text == "" && storeNameTextField.text == "" && storeAddressTextField.text == "" && storeContactTextField.text == "" {
+        if itemNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" && itemPriceTextField.text == "" && itemDescriptionTextField.text == "" && categoryTextField.text == "" && storeNameTextField.text == "" && storeAddressTextField.text == "" && storeContactTextField.text == "" {
             return 2
         } else if Int(itemPriceTextField.text!) == nil{
             return 3

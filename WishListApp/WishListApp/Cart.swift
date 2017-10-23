@@ -21,19 +21,19 @@ class Cart {
     }
     
     
-    func removeItem(_ itemNameToBeRemoved : String) {
+    func removeItem(_ itemNameToBeRemoved : String) -> Bool? {
         var count = 0
+        var flag = false
         for item in sessionCart{
             if item.itemName == itemNameToBeRemoved {
-                sessionCart.remove(at: count)
-                print("Item \(item.itemName) is removed from your cart !")
-                break
+           sessionCart.remove(at: count)
+                flag = true
+           print("Item \(item.itemName) is removed from your cart !")
+           break
             }
             count += 1
         }
-        if count == sessionCart.count{
-            print("Cannot find the Item you specified. Try again !")
-        }
+        return flag
     }
     
     
@@ -44,17 +44,13 @@ class Cart {
                 listOfItems.append(item)
             }
         }
-        if listOfItems.isEmpty{
-            return nil
-        }
+       
         return listOfItems
     }
     
     
-    func listAllItems() {
-        for product in sessionCart {
-            print("\(product.itemName)   \(product.itemPrice)   \(product.category)    \(product.store.storeName)")
-        }
+    func listAllItems() -> [Item] {
+        return sessionCart
     }
     
 
