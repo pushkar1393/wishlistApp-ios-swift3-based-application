@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A282F2BD1F9C62BC0097833C"
-               BuildableName = "WishListApp.app"
-               BlueprintName = "WishListApp"
-               ReferencedContainer = "container:WishListApp.xcodeproj">
+               BlueprintIdentifier = "A258DD281FA6E67C0081CE6D"
+               BuildableName = "Wishlist2.app"
+               BlueprintName = "Wishlist2"
+               ReferencedContainer = "container:Wishlist2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A282F2BD1F9C62BC0097833C"
-            BuildableName = "WishListApp.app"
-            BlueprintName = "WishListApp"
-            ReferencedContainer = "container:WishListApp.xcodeproj">
+            BlueprintIdentifier = "A258DD281FA6E67C0081CE6D"
+            BuildableName = "Wishlist2.app"
+            BlueprintName = "Wishlist2"
+            ReferencedContainer = "container:Wishlist2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A282F2BD1F9C62BC0097833C"
-            BuildableName = "WishListApp.app"
-            BlueprintName = "WishListApp"
-            ReferencedContainer = "container:WishListApp.xcodeproj">
+            BlueprintIdentifier = "A258DD281FA6E67C0081CE6D"
+            BuildableName = "Wishlist2.app"
+            BlueprintName = "Wishlist2"
+            ReferencedContainer = "container:Wishlist2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A282F2BD1F9C62BC0097833C"
-            BuildableName = "WishListApp.app"
-            BlueprintName = "WishListApp"
-            ReferencedContainer = "container:WishListApp.xcodeproj">
+            BlueprintIdentifier = "A258DD281FA6E67C0081CE6D"
+            BuildableName = "Wishlist2.app"
+            BlueprintName = "Wishlist2"
+            ReferencedContainer = "container:Wishlist2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

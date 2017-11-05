@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WishListApp.xcscheme</key>
+		<key>Wishlist2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A282F2BD1F9C62BC0097833C</key>
+		<key>A258DD281FA6E67C0081CE6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,12 +1,13 @@
 //
 //  Store.swift
-//  WishListApp
+//  Wishlist2
 //
-//  Created by Pushkar Khedekar on 10/22/17.
+//  Created by Pushkar Khedekar on 10/30/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import Foundation
+
 
 class Store {
     

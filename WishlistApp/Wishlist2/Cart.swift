@@ -1,8 +1,8 @@
 //
 //  Cart.swift
-//  WishListApp
+//  Wishlist2
 //
-//  Created by Pushkar Khedekar on 10/22/17.
+//  Created by Pushkar Khedekar on 10/30/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
@@ -23,9 +23,9 @@ class Cart {
     
     
     func addCategory(_ categoryName : String, _ itemToInsert : Item)  {
-       let categoryReturned = checkIfExistsCategory(categoryName)
+        let categoryReturned = checkIfExistsCategory(categoryName)
         if categoryReturned.categoryName == "nil" {
-             let category = Category(categoryName)
+            let category = Category(categoryName)
             categoryList.append(category)
             category.items.append(itemToInsert)
             
@@ -40,10 +40,10 @@ class Cart {
         var flag = false
         for item in sessionCart{
             if item.itemName.lowercased() == itemNameToBeRemoved.lowercased() {
-           sessionCart.remove(at: count)
+                sessionCart.remove(at: count)
                 flag = true
-           print("Item \(item.itemName) is removed from your cart !")
-           break
+                print("Item \(item.itemName) is removed from your cart !")
+                break
             }
             count += 1
         }
@@ -58,7 +58,7 @@ class Cart {
                 listOfItems.append(item)
             }
         }
-       
+        
         return listOfItems
     }
     
@@ -91,6 +91,6 @@ class Cart {
         }
         return cateReturn
     }
-
-
+    
+    
 }
