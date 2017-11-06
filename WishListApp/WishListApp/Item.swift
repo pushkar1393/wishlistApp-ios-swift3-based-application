@@ -1,13 +1,13 @@
 //
 //  Item.swift
-//  Wishlist2
+//  WishListApp
 //
-//  Created by Pushkar Khedekar on 10/30/17.
+//  Created by Pushkar Khedekar on 11/5/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import Foundation
-
+import UIKit
 
 class Item{
     
@@ -16,14 +16,15 @@ class Item{
     var itemPrice : Int
     var store : Store
     var category : String
-    
-    init(_ itemName : String ,_ itemDescription : String ,_ itemPrice : Int,_ store : Store ,_ category : String) {
+    var itemImage : UIImage
+    init(_ itemName : String ,_ itemDescription : String ,_ itemPrice : Int,_ store : Store ,_ category : String,_ itemImage : UIImage) {
         
         self.itemName = itemName
         self.itemDescription = itemDescription
         self.itemPrice = itemPrice
         self.store = store
         self.category = category
+        self.itemImage = itemImage
         
     }
     

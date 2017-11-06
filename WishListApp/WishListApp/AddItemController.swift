@@ -1,31 +1,30 @@
 //
-//  AddItemViewController.swift
-//  Wishlist2
+//  AddItemController.swift
+//  WishListApp
 //
-//  Created by Pushkar Khedekar on 10/30/17.
+//  Created by Pushkar Khedekar on 11/5/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+
     
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemDescriptionTextField: UITextField!
-    
     @IBOutlet weak var itemPriceTextField: UITextField!
     @IBOutlet weak var itemStoreNameTextField: UITextField!
-    @IBOutlet weak var itemStoreAddressTextField: UITextField!
     @IBOutlet weak var itemStoreContactTextField: UITextField!
+    @IBOutlet weak var itemStoreAddressTextField: UITextField!
+    
     @IBOutlet weak var itemCategoryTextField: UITextField!
-
+    var itemImage : UIImage?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+
         // Do any additional setup after loading the view.
     }
 
@@ -35,28 +34,58 @@ class AddItemViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var imageContainer: UIImageView!
+    
+    
+    @IBAction func imageAddButtonPressed(_ sender: Any) {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        let libController = UIAlertController(title: "Photo Source", message: "", preferredStyle: .actionSheet)
+
+        libController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }))
+        
+        libController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(libController, animated: true, completion: nil)
+
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        itemImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageContainer.image = itemImage
+        picker.dismiss(animated: true, completion: nil)
+        
+        
+    }
+
+    
     @IBAction func resetButtonPressed(_ sender: Any) {
+        imageContainer.image = nil
         itemNameTextField.text=""
         itemDescriptionTextField.text=""
         itemPriceTextField.text=""
+        itemStoreNameTextField.text=""
         itemStoreContactTextField.text=""
         itemStoreAddressTextField.text=""
-        itemStoreNameTextField.text=""
         itemCategoryTextField.text=""
     }
 
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "closeCreate", sender: self)
-    }
-    
     @IBAction func createButtonPressed(_ sender: Any) {
+        
         if checkIsValid() == 1 {
-            let store = Store(itemStoreNameTextField.text!,itemStoreAddressTextField.text!, Int64(itemStoreContactTextField.text!)!)
+            let store = Store(itemStoreNameTextField.text!.lowercased(),itemStoreAddressTextField.text!.lowercased(), Int64(itemStoreContactTextField.text!)!)
             
-            let item = Item(itemNameTextField.text!, itemDescriptionTextField.text!, Int(itemPriceTextField.text!)!, store, itemCategoryTextField.text!)
+            let item = Item(itemNameTextField.text!.lowercased(), itemDescriptionTextField.text!.lowercased(), Int(itemPriceTextField.text!)!, store, itemCategoryTextField.text!.lowercased(),itemImage!)
             Cart.cart.addCategory(itemCategoryTextField.text!, item)
             Cart.cart.addItem(item)
             createAlert("Congratulations","Item added successfully !")
@@ -75,11 +104,16 @@ class AddItemViewController: UIViewController {
             
             createAlert("Invalid Contact Info","Please enter a valid contact info")
             itemStoreContactTextField.text = ""
+        } else if checkIsValid() == 5{
+            createAlert("Image Missing", "Upload an Image")
         }
+        
+
         
     }
     
     
+    // function to perform field validations
     func checkIsValid() -> Int {
         if itemNameTextField.text == "" || itemPriceTextField.text == "" || itemDescriptionTextField.text == "" || itemCategoryTextField.text == "" || itemStoreNameTextField.text == "" || itemStoreAddressTextField.text == "" || itemStoreContactTextField.text == "" {
             return 2
@@ -87,10 +121,15 @@ class AddItemViewController: UIViewController {
             return 3
         } else if Int64(itemStoreContactTextField.text!) == nil{
             return 4
+        } else if itemImage == nil {
+            return 5
         }
         return 1;
     }
     
+    
+    
+    // function to pop up an alert
     func createAlert(_ title : String,_ message : String){
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -100,20 +139,6 @@ class AddItemViewController: UIViewController {
         
         self.present(alertController, animated: true) {}
     }
-    
-    
 
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -1,8 +1,8 @@
 //
 //  Store.swift
-//  Wishlist2
+//  WishListApp
 //
-//  Created by Pushkar Khedekar on 10/30/17.
+//  Created by Pushkar Khedekar on 11/5/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 

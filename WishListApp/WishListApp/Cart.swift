@@ -1,12 +1,13 @@
 //
 //  Cart.swift
-//  Wishlist2
+//  WishListApp
 //
-//  Created by Pushkar Khedekar on 10/30/17.
+//  Created by Pushkar Khedekar on 11/5/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import Foundation
+import  UIKit
 
 class Cart {
     
@@ -92,5 +93,16 @@ class Cart {
         return cateReturn
     }
     
+    func retrieveItem(_ itemToRetrieve : String) ->  Item? {
+        var itemReturn : Item?
+        for item in sessionCart {
+            if itemToRetrieve.lowercased() == item.itemName {
+                itemReturn = item
+                break
+            }
+        }
+        return itemReturn
+    }
     
 }
+
