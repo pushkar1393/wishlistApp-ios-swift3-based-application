@@ -2,14 +2,14 @@
 //  ItemDetailViewController.swift
 //  WishListApp
 //
-//  Created by Pushkar Khedekar on 11/5/17.
+//  Created by Pushkar Khedekar on 11/12/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import UIKit
 
 class ItemDetailViewController: UIViewController {
-    
+
     var item : Item? = nil
     
     @IBOutlet weak var imageContainer: UIImageView!
@@ -21,24 +21,25 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var itemStoreAddressLabel: UILabel!
     @IBOutlet weak var itemCategoryLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         imageContainer.image = item?.itemImage
         
-         itemNameLabel.text = "Name :" + (item?.itemName)!
-
+        imageContainer.image = item?.itemImage
+        
+        itemNameLabel.text = "Name :" + (item?.itemName)!
+        
         itemDescriptionLabel.text = "Description :" + (item?.itemDescription)!
-
+        
         itemPriceLabel.text = "Price :" + (String((item?.itemPrice)!))
-
+        
         itemStoreNameLabel.text = "Store Name :" + (item?.store.storeName)!
-
+        
         itemStoreAddressLabel.text = "Store Address :" + (item?.store.storeAddress)!
         
         itemStoreContactLabel.text = "Store Contact :" + (String((item?.store.storeContact)!))
         
         itemCategoryLabel.text = "Item Category :" + (item?.category)!
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,5 @@ class ItemDetailViewController: UIViewController {
     }
     
 
-   
 
 }

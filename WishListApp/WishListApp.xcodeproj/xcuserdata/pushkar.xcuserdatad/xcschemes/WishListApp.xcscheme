@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A212B70C1FAF96B900686566"
+               BlueprintIdentifier = "A229FB121FB8F62100BDDCD0"
                BuildableName = "WishListApp.app"
                BlueprintName = "WishListApp"
                ReferencedContainer = "container:WishListApp.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A212B70C1FAF96B900686566"
+            BlueprintIdentifier = "A229FB121FB8F62100BDDCD0"
             BuildableName = "WishListApp.app"
             BlueprintName = "WishListApp"
             ReferencedContainer = "container:WishListApp.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A212B70C1FAF96B900686566"
+            BlueprintIdentifier = "A229FB121FB8F62100BDDCD0"
             BuildableName = "WishListApp.app"
             BlueprintName = "WishListApp"
             ReferencedContainer = "container:WishListApp.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A212B70C1FAF96B900686566"
+            BlueprintIdentifier = "A229FB121FB8F62100BDDCD0"
             BuildableName = "WishListApp.app"
             BlueprintName = "WishListApp"
             ReferencedContainer = "container:WishListApp.xcodeproj">

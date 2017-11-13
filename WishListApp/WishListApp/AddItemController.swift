@@ -2,25 +2,52 @@
 //  AddItemController.swift
 //  WishListApp
 //
-//  Created by Pushkar Khedekar on 11/5/17.
+//  Created by Pushkar Khedekar on 11/12/17.
 //  Copyright © 2017 Pushkar Khedekar. All rights reserved.
 //
 
 import UIKit
 
-class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class AddItemController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-    
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemDescriptionTextField: UITextField!
     @IBOutlet weak var itemPriceTextField: UITextField!
     @IBOutlet weak var itemStoreNameTextField: UITextField!
     @IBOutlet weak var itemStoreContactTextField: UITextField!
     @IBOutlet weak var itemStoreAddressTextField: UITextField!
-    
     @IBOutlet weak var itemCategoryTextField: UITextField!
+    
+    
+    @IBOutlet weak var imageContainer: UIImageView!
     var itemImage : UIImage?
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        imageContainer.image = nil
+        itemNameTextField.text=""
+        itemDescriptionTextField.text=""
+        itemPriceTextField.text=""
+        itemStoreNameTextField.text=""
+        itemStoreContactTextField.text=""
+        itemStoreAddressTextField.text=""
+        itemCategoryTextField.text=""
+    }
+    
+    @IBAction func imageAddButtonPressed(_ sender: Any) {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        let libController = UIAlertController(title: "Photo Source", message: "", preferredStyle: .actionSheet)
+        
+        libController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }))
+        
+        libController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(libController, animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,32 +60,6 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINa
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBOutlet weak var imageContainer: UIImageView!
-    
-    
-    @IBAction func imageAddButtonPressed(_ sender: Any) {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        let libController = UIAlertController(title: "Photo Source", message: "", preferredStyle: .actionSheet)
-
-        libController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
-            picker.sourceType = .photoLibrary
-            self.present(picker, animated: true, completion: nil)
-        }))
-        
-        libController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        self.present(libController, animated: true, completion: nil)
-
-        
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         itemImage = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -66,18 +67,6 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINa
         picker.dismiss(animated: true, completion: nil)
         
         
-    }
-
-    
-    @IBAction func resetButtonPressed(_ sender: Any) {
-        imageContainer.image = nil
-        itemNameTextField.text=""
-        itemDescriptionTextField.text=""
-        itemPriceTextField.text=""
-        itemStoreNameTextField.text=""
-        itemStoreContactTextField.text=""
-        itemStoreAddressTextField.text=""
-        itemCategoryTextField.text=""
     }
 
     @IBAction func createButtonPressed(_ sender: Any) {
@@ -107,8 +96,6 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINa
         } else if checkIsValid() == 5{
             createAlert("Image Missing", "Upload an Image")
         }
-        
-
         
     }
     
@@ -140,5 +127,8 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.present(alertController, animated: true) {}
     }
 
+    
+    
+    
 
 }
