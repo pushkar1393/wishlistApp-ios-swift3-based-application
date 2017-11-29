@@ -76,9 +76,15 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate,UINav
             
             let item = Item(itemNameTextField.text!.lowercased(), itemDescriptionTextField.text!.lowercased(), Int(itemPriceTextField.text!)!, store, itemCategoryTextField.text!.lowercased(),itemImage!)
             Cart.cart.addCategory(itemCategoryTextField.text!, item)
-            Cart.cart.addItem(item)
+            //Cart.cart.addItem(item)
+            var flag = DataPersistenceManager.storeItem(item)
+            if flag == true {
             createAlert("Congratulations","Item added successfully !")
             resetButtonPressed(self)
+            } else {
+                createAlert("Duplicate Item", "Please enter a different item name")
+                itemNameTextField.text = ""
+            }
             
         } else  if checkIsValid() == 2{
             
@@ -93,6 +99,7 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate,UINav
             
             createAlert("Invalid Contact Info","Please enter a valid contact info")
             itemStoreContactTextField.text = ""
+        
         } else if checkIsValid() == 5{
             createAlert("Image Missing", "Upload an Image")
         }
@@ -108,6 +115,7 @@ class AddItemController: UIViewController, UIImagePickerControllerDelegate,UINav
             return 3
         } else if Int64(itemStoreContactTextField.text!) == nil{
             return 4
+        
         } else if itemImage == nil {
             return 5
         }

@@ -10,18 +10,25 @@ import UIKit
 
 class DisplayListViewController: UITableViewController, UISearchBarDelegate {
     
-    var myList = Cart.cart.sessionCart
+    //var myList = Cart.cart.sessionCart
+   var myList = DataPersistenceManager.retrieveItemList()
     var item : Item?
     
     @IBAction func addButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "addItems", sender: self)
     }
 
+    @IBAction func funcClearAllData(_ sender: Any) {
+        DataPersistenceManager.clearData()
+        myList = DataPersistenceManager.retrieveItemList()
+        self.tableView.reloadData()
+    }
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBarPrepare()
+        //DataPersistenceManager.clearData()
 
     }
 
@@ -31,7 +38,8 @@ class DisplayListViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        myList = Cart.cart.sessionCart
+        //myList = Cart.cart.sessionCart
+        myList = DataPersistenceManager.retrieveItemList()
         super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
@@ -45,7 +53,7 @@ class DisplayListViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
-        myList = Cart.cart.sessionCart
+        myList = DataPersistenceManager.retrieveItemList()
         if searchText.isEmpty{
             self.tableView.reloadData()
         }
@@ -72,6 +80,7 @@ class DisplayListViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! CellView
         let item = myList[indexPath.row]
         cell.nameLabel.text = item.itemName
+        cell.imageContainer.image = item.itemImage
         return cell
     }
     
@@ -80,8 +89,10 @@ class DisplayListViewController: UITableViewController, UISearchBarDelegate {
         let deleteItem = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             let cell = tableView.cellForRow(at: indexPath) as! CellView
             let item = cell.nameLabel.text
-            Cart.cart.removeItem(item!)
-            self.myList = Cart.cart.sessionCart
+             DataPersistenceManager.deleteItem(item!)
+            //Cart.cart.removeItem(item!)
+            //self.myList = Cart.cart.sessionCart
+            self.myList = DataPersistenceManager.retrieveItemList()
             self.tableView.reloadData()
             
         }
@@ -89,7 +100,8 @@ class DisplayListViewController: UITableViewController, UISearchBarDelegate {
         let viewItem = UITableViewRowAction(style: .normal, title: "View") { (action, indexPath) in
             let cell = tableView.cellForRow(at: indexPath) as! CellView
             let name = cell.nameLabel.text
-            self.item = Cart.cart.retrieveItem(name!)
+            //self.item = Cart.cart.retrieveItem(name!)
+            self.item = DataPersistenceManager.retrieveItem(name!)
             self.performSegue(withIdentifier: "viewItem", sender: self)
         }
         

@@ -20,6 +20,8 @@
 		A229FB331FB8F98300BDDCD0 /* AddItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229FB321FB8F98300BDDCD0 /* AddItemController.swift */; };
 		A229FB371FB9032E00BDDCD0 /* DisplayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229FB361FB9032E00BDDCD0 /* DisplayListViewController.swift */; };
 		A229FB391FB912BC00BDDCD0 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229FB381FB912BC00BDDCD0 /* ItemDetailViewController.swift */; };
+		A2EE6B2A1FCE391000D01CE2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2EE6B281FCE391000D01CE2 /* Model.xcdatamodeld */; };
+		A2EE6B2C1FCE39C800D01CE2 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE6B2B1FCE39C800D01CE2 /* DataPersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		A229FB321FB8F98300BDDCD0 /* AddItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemController.swift; sourceTree = "<group>"; };
 		A229FB361FB9032E00BDDCD0 /* DisplayListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayListViewController.swift; sourceTree = "<group>"; };
 		A229FB381FB912BC00BDDCD0 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		A2EE6B291FCE391000D01CE2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A2EE6B2B1FCE39C800D01CE2 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		A229FB0A1FB8F62100BDDCD0 = {
 			isa = PBXGroup;
 			children = (
+				A2EE6B271FCE38F100D01CE2 /* Dao */,
 				A229FB151FB8F62100BDDCD0 /* WishListApp */,
 				A229FB141FB8F62100BDDCD0 /* Products */,
 			);
@@ -86,6 +91,15 @@
 				A229FB381FB912BC00BDDCD0 /* ItemDetailViewController.swift */,
 			);
 			path = WishListApp;
+			sourceTree = "<group>";
+		};
+		A2EE6B271FCE38F100D01CE2 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				A2EE6B281FCE391000D01CE2 /* Model.xcdatamodeld */,
+				A2EE6B2B1FCE39C800D01CE2 /* DataPersistenceManager.swift */,
+			);
+			name = Dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A229FB391FB912BC00BDDCD0 /* ItemDetailViewController.swift in Sources */,
+				A2EE6B2C1FCE39C800D01CE2 /* DataPersistenceManager.swift in Sources */,
 				A229FB191FB8F62100BDDCD0 /* ViewController.swift in Sources */,
 				A229FB2F1FB8F79900BDDCD0 /* Cart.swift in Sources */,
 				A229FB2D1FB8F73300BDDCD0 /* Category.swift in Sources */,
@@ -169,6 +184,7 @@
 				A229FB371FB9032E00BDDCD0 /* DisplayListViewController.swift in Sources */,
 				A229FB2B1FB8F70A00BDDCD0 /* Store.swift in Sources */,
 				A229FB331FB8F98300BDDCD0 /* AddItemController.swift in Sources */,
+				A2EE6B2A1FCE391000D01CE2 /* Model.xcdatamodeld in Sources */,
 				A229FB311FB8F7D100BDDCD0 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +347,22 @@
 				A229FB271FB8F62100BDDCD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A2EE6B281FCE391000D01CE2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2EE6B291FCE391000D01CE2 /* Model.xcdatamodel */,
+			);
+			currentVersion = A2EE6B291FCE391000D01CE2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A229FB0B1FB8F62100BDDCD0 /* Project object */;
 }
